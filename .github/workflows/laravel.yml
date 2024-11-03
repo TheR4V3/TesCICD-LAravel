@@ -28,6 +28,10 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
       working-directory: laravel
+    - name: Migrate Table
+      run: |
+        php artisan migrate
+      working-directory: laravel
     - name: run test
       run: |
         php artisan test
