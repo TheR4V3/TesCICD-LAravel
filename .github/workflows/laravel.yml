@@ -28,14 +28,6 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
       working-directory: laravel
-    - name: Create Database
+    - name: run test
       run: |
-        mkdir -p database
-        touch database/database.sqlite
-      working-directory: laravel
-    - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: laravel/database/database.sqlite
-      run: php artisan test
-      working-directory: laravel
+        php artisan test
