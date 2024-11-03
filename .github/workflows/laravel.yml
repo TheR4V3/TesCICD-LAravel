@@ -31,3 +31,4 @@ jobs:
     - name: run test
       run: |
         php artisan test
+      working-directory: laravel
